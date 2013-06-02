@@ -1,0 +1,103 @@
+---
+title: Progress
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="progress"></div>
+  <script>
+    progress = new jB.Progress({
+        appendTo: '#progress'
+        ,percentage: 50
+        ,striped: true
+        ,animated: true
+    })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Progress({
+    appendTo: '#progress'
+    ,percentage: 50
+    ,striped: true
+    ,animated: true
+})
+</pre>
+</section>
+
+<section>
+  <h3>Progress Types</h3>
+  <div id="progress-type"></div>
+  <script>
+      $.each('primary info success warning danger inverse'.split(' '), function(index, type) {
+          new jB.Progress({
+              appendTo: '#progress-type'
+              ,percentage: 50
+              ,striped: true
+              ,type: type
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Progress({
+    appendTo: '#progress'
+    ,percentage: 50
+    ,striped: true
+    ,type: 'primary'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Run Progress</h3>
+  <div id="run-progress"></div>
+  <div id="btn"></div>
+  <script>
+      var progress = new jB.Progress({
+          appendTo: '#run-progress'
+          ,striped: true
+      })
+      var btnPlayHandle = new jB.Button({
+          appendTo: '#btn'
+          ,text: 'Run'
+          ,click: function() {
+              jB(this).disable()
+              btnStopHandle.enable()
+              progress.play(function() {
+                  btnPlayHandle.enable()
+                  btnStopHandle.disable()
+              })
+          }
+      })
+      var btnStopHandle = new jB.Button({
+          appendTo: '#btn'
+          ,text: 'Stop'
+          ,disabled: true
+          ,click: function() {
+              jB(this).disable()
+              progress.stop()
+              btnPlayHandle.enable()
+          }
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Progress({
+    appendTo: '#progress'
+    ,percentage: 50
+    ,striped: true
+    ,animated: true
+})
+
+var btnHandle = new jB.Button({
+    appendTo: '#btn-handle'
+    ,text: 'Run'
+    ,click: function() {
+        this.disable()
+        progress.play(function() {
+            btnHandle.enable()
+        })
+    }
+})
+</pre>
+</section>

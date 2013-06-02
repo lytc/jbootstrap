@@ -1,0 +1,192 @@
+---
+title: Buttons
+---
+
+<div class="page-header">
+  <h1>Buttons</h1>
+</div>
+
+<section>
+  <h4><i class="icon-star-empty"></i> Example</h4>
+<pre class="example" data-code-editor-width="60%" data-preview-width="40%">
+new jB.Button({
+  text: 'Button',
+  //type: 'primary',    // primary|info|success|warning|danger|inverse|link
+  //size: 'large',      // mini|small|large
+  //disabled: true,     // true|false
+  //pressed: true,      // true|false
+  //togglable: true,    // true|false
+  //block: true,        // true|false
+  //icon: 'glass',      // jB.Icon.type|jB.Icon.options
+  //iconAlign: 'right', // left|right
+  click: function() {
+    alert('Hi!')
+  }
+})
+</pre>
+</section>
+
+<div id="api">
+  <section>
+    <h4 class="members-title"><i class="icon-cogs"></i> Setters</h4>
+    <hr>
+    <ul class="unstyled">
+      <li class="member">
+        <a class="name" href="#">type</a> : <a class="type" href="#">String</a>
+        <div class="description">
+          <p>The type of the Button. Acceptable values for this setter are:</p>
+          <ul>
+            <li><code>primary</code></li>
+            <li><code>info</code></li>
+            <li><code>success</code></li>
+            <li><code>warning</code></li>
+            <li><code>danger</code></li>
+            <li><code>inverse</code></li>
+            <li><code>link</code></li>
+          </ul>
+        </div>
+      </li>
+      <li class="member">
+        <a class="name" href="#">text</a> : <a class="type" href="#">String</a>
+        <div class="description">
+          <p>The Button text to be used as text (html tags are unacceptable).</p>
+        </div>
+      </li>
+      <li class="member">
+        <a class="name" href="#">size</a> : <a class="type" href="#">String</a>
+        <div class="description">
+          <p>The size of the Button. Four values are allowed:</p>
+          <ul>
+            <li><code>mini</code></li>
+            <li><code>small</code></li>
+            <li><code>default</code></li>
+            <li><code>large</code></li>
+          </ul>
+          <p>Default to: <code>default</code></p>
+        </div>
+      </li>
+      <li class="member">
+        <a class="name" href="#">disabled</a> : <a class="type" href="#">Boolean</a>
+        <div class="description">
+          <p><code>true</code> to disable the Button.</p>
+          <p>Default to: <code>false</code></p>
+        </div>
+      </li>
+      <li class="member">
+        <a href="#" class="name">pressed</a> : <a class="type" href="#">Boolean</a>
+        <div class="description">
+          <p><code>true</code> to render the Button as pressed.</p>
+          <p>Default to: <code>false</code></p>
+        </div>
+      </li>
+      <li class="member">
+        <a href="#" class="name">togglable</a> : <a class="type" href="#">Boolean</a>
+        <div class="description">
+          <p><code>true</code> to activate toggling on the Button.</p>
+          <p>Default to: <code>false</code></p>
+        </div>
+      </li>
+      <li class="member">
+        <a class="name" href="#">block</a> : <a class="type">Boolean</a>
+        <div class="description">
+          <p><code>true</code> to span the Button to the full with of it parent.</p>
+          <p>Default to: <code>false</code></p>
+        </div>
+      </li>
+      <li class="member">
+        <a href="#" class="name">icon</a> : <a class="type">String | Object</a>
+        <div class="description">
+          <p>The icon of the Button.</p>
+          <ul>
+            <li>String: The type of the icon.</li>
+            <li>Object: The options apply to <code>jB.Icon</code></li>
+          </ul>
+        </div>
+      </li>
+      <li class="member">
+        <a href="#" class="name">iconAlign</a> : <a class="type">String</a>
+        <div class="description">
+          <p>The Icon alignment. Two values are allowed:</p>
+          <ul>
+            <li><code>left</code></li>
+            <li><code>right</code></li>
+          </ul>
+          <p>Default to: <code>left</code></p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h4 class="members-title"><i class="icon-list"></i> Getters</h4>
+    <hr>
+    <ul class="unstyled">
+      <li class="member">
+        <a href="#" class="name">textCmp</a> : <a href="#" class="type">jB.Container</a>
+        <div class="description">
+          <p>The text container of the Button.</p>
+        </div>
+      </li>
+      <li class="member">
+        <a href="#" class="name">disabled</a> : <a href="#" class="type">Boolean</a>
+        <p><code>true</code> if this Button is disabled.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h4 class="members-title"><i class="icon-list-alt"></i> Methods</h4>
+    <hr>
+    <ul class="unstyled">
+      <li class="member">
+        <a href="#" class="name">enable()</a> : <a href="#" class="type">jB.Button</a>
+        <div class="descriptipn">
+          <p>Enable the Button.</p>
+        </div>
+      </li>
+      <li class="member">
+        <a href="#" class="name">enable()</a> : <a href="#" class="type">jB.Button</a>
+        <div class="descriptipn">
+          <p>Disable the Button.</p>
+        </div>
+      </li>
+      <li class="member">
+        <a href="#" class="name">toggle</a>( [Boolean state] ) : <a href="#" class="type">jB.Button</a>
+        <div class="descriptipn">
+          <p>If a state it passed, it becomes the pressed state otherwise the current state is toggled.</p>
+          <h5>Parameters:</h5>
+          <ul>
+            <li>
+              state : <a href="#" class="type">Boolean</a> (optional)<br>
+              Force a particular state
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h4 class="members-title"><i class="icon-fire"></i> Events</h4>
+    <hr>
+    <ul class="unstyled">
+      <li class="member">
+        <a class="name" href="#">toggle</a>( <a href="#" class="type">$.Event</a> event, <a href="#" class="type">Boolean</a> pressed )
+        <div class="description">
+          <p>Fires when the 'pressed' state of this button changes</p>
+          <h5>Arguments:</h5>
+          <ul>
+            <li>
+              event : <a href="#" class="type">$.Event</a><br>
+              The jQuery Event object
+            </li>
+            <li>
+              pressed : <a href="#" class="type">Boolean</a><br>
+              <code>true</code> if this Button is pressed.
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>

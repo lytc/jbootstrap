@@ -1,0 +1,33 @@
+---
+title: jBootstrap - Home
+---
+
+<% content_for :assets_css do %>
+    <%= stylesheet_link_tag "home" %>
+<% end %>
+
+<% content_for :header do %>
+    <h1>jBootstrap</h1>
+    <p>The Javascipt version of <a href="http://twitter.github.io/bootstrap">Twitter Bootstrap</a></p>
+    <a href="#" class="btn btn-primary btn-large">Download jBootstrap</a>
+    <ul class="inline">
+      <li><a href="https://github.com/lytc/jbootstrap">Github project</a></li>
+      <li><a href="#">Version 1.0</a></li>
+    </ul>
+<% end %>
+<pre class="example">
+new jB.Button({
+    renderTo: '#btn'
+    ,text: 'Welcome to Bootstrap JS'
+    ,type: 'primary'
+    ,size: 'large'
+    ,icon: {
+        type: 'heart'
+        ,white: true
+    }
+    ,click: function() {
+        jB(this).type('success')
+                .text('Got it!')
+    }
+})
+</pre>

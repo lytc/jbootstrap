@@ -1,0 +1,152 @@
+---
+title: Bootstrap JS - Components
+---
+
+<% content_for :assets_css do %>
+    <%= stylesheet_link_tag "component" %>
+<% end %>
+
+<% content_for :assets_js do %>
+    <%= javascript_include_tag "component" %>
+<% end %>
+
+<% content_for :header do %>
+    Components
+<% end %>
+
+<script id="api-tpl" type="text/tpl">
+  <div class="page-header">
+    <h1 id="<%%= name.replace(/\./g, '-') %>">
+      <%%= name %>
+      <%% if (alias) { %>
+      <small><%%= alias %></small>
+      <%% } %>
+    </h1>
+  </div>
+
+  <p><%%= description %></p>
+  <%% if (examples) { %>
+  <section>
+    <h4>Examples</h4>
+    <%% jQuery.each(examples, function(index, code) { %>
+        <pre class="example">
+          <%%= code %>
+        </pre>
+    <%% }) %>
+  </section>
+  <%% } %>
+
+  <%% var sectionTemplate = _.template(jQuery('#api-sections-tpl').html()) %>
+  <%%= sectionTemplate({items: members, currentClass: name}) %>
+
+</script>
+
+<script id="api-sections-tpl" type="text/tpl">
+  <%% var iconMap = {options: 'cogs', properties: 'list', methods: 'list-alt', events: 'fire'} %>
+  <%% var memberTemplate = _.template(jQuery('#api-members-tpl').html()) %>
+  <%% jQuery.each(items, function(name, members) { %>
+  <section class="member-group <%%= name %>">
+    <h4 class="title">
+      <i class="icon-<%%= iconMap[name] %>"></i>
+      <%%= name %>
+    </h4>
+    <hr>
+    <%%= memberTemplate({items: members, currentClass: currentClass}) %>
+  </section>
+  <%% }) %>
+</script>
+
+<script id="api-members-tpl" type="text/tpl">
+  <ul class="unstyled member-list">
+    <%% var methodParamTemplate = _.template(jQuery('#api-method-params-tpl').html()) %>
+    <%% var paramDetailTemplate = _.template(jQuery('#api-params-detail-tpl').html()) %>
+    <%% var memberId %>
+    <%% jQuery.each(items, function(index, item) { %>
+      <%% memberId = item.class.replace(/\./g, '-') + '-' + item.name.replace(/\./g, '-') %>
+      <li class="member <%%= item.access? item.access : 'public' %> <%% if (item.class !== currentClass) { %>inherited<%% } %>" id="<%%= memberId %>" data-name="<%%= item.name %>">
+        <a class="caret" href="#"></a>
+        <a href="#<%%= item.class %>-<%%= item.name %>" class="name"><%%= item.name %></a>
+        <div class="pull-right"><%%= _.template.typeLink(item.class) %></div>
+        <%% if (item.itemtype == 'method' || item.itemtype == 'event') { %>
+          <%%= methodParamTemplate({items: item.params}) %>
+        <%% } %>
+        <%% if (item.itemtype == 'attribute' || item.itemtype == 'property') { %>
+          : <a href="#"><%%= _.template.typeLink(item.type) %></a>
+        <%% } else if (item.itemtype == 'method') { %>
+          <%% if (item.return) { %>
+            : <a href="#"><%%= _.template.typeLink(item.return.type) %></a>
+          <%% } %>
+        <%% } %>
+        <div class="description">
+          <div class="inner clearfix">
+              <%%= item.description %>
+              <%% if (item.itemtype == 'method' || item.itemtype == 'event') { %>
+                <%% if (item.params) { %>
+                  <%%= paramDetailTemplate({items: item.params}) %>
+                <%% } %>
+                <%% if (item.return) { %>
+                  <br>
+                  <b>Returns:</b>
+                  <a href="#"><%%= _.template.typeLink(item.return.type) %></a>
+                  <%% if (item.return.description) { %>
+                    <br><%%= item.return.description %>
+                  <%% } %>
+                <%% } %>
+              <%% } else if (item.default) { %>
+                <p>Default to: <%%= item.default %></p>
+              <%% } %>
+            <%% if (item.example) { %>
+                <section>
+                    <h5>Examples</h5>
+                    <%% jQuery.each(item.example, function(index, code) { %>
+                        <pre class="example">
+                            <%%= code %>
+                        </pre>
+                    <%% }) %>
+                </section>
+            <%% } %>
+          </div>
+        </div>
+      </li>
+    <%% }) %>
+  </ul>
+</script>
+
+<script id="api-method-params-tpl" type="text/tpl">
+  (
+  <%% if (items) { %>
+    <%% jQuery.each(items, function(index, item) { %>
+      <%% if (item.optional) { %>
+        [ <a href="#"><%%= _.template.typeLink(item.type) %></a> <span><%%= item.name %></span> ]
+      <%% } else { %>
+        <a href="#"><%%= _.template.typeLink(item.type) %></a> <span><%%= item.name %></span>
+      <%% } %>
+      <%% if (index < items.length - 1) { %>, <%% } %>
+    <%% }) %>
+  <%% } %>
+  )
+</script>
+
+<script id="api-params-detail-tpl" type="text/tpl">
+  <h5>Parameters:</h5>
+  <ul>
+    <%% jQuery.each(items, function(index, item) { %>
+      <li>
+        <%%= item.name %> : <a href="#"><%%= _.template.typeLink(item.type) %></a>
+        <%% if (item.optional) { %><span class="muted">(optional)</span><%% } %>
+        <%% if (item.description) { %> <br><%%= item.description %> <%% } %>
+      </li>
+    <%% }) %>
+  </ul>
+</script>
+
+<div class="row">
+  <div class="span3">
+    <div id="doctree-container" class="well well-small"></div>
+  </div>
+  <div class="span9">
+    <div id="api">
+      <div id="api-toolbar"></div>
+    </div>
+  </div>
+</div>

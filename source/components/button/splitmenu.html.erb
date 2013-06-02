@@ -1,0 +1,161 @@
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="btn-menu"></div>
+  <script>
+    new jB.button.SplitMenu({
+        appendTo: '#btn-menu'
+        ,text: 'Action'
+        ,menu: [
+            {
+                text: 'Item 1'
+                ,href: 'http://google.com'
+            },{
+                text: 'Item 2'
+            },{
+                text: 'Item 3'
+            }
+        ]
+    })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.SplitMenu({
+    appendTo: '#btn'
+    ,text: 'Action'
+    ,menu: [
+        {
+            text: 'Item 1'
+            ,href: 'http://google.com'
+        },{
+            text: 'Item 2'
+        },{
+            text: 'Item 3'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Button Types</h3>
+  <div id="btn-type"></div>
+  <script>
+      $.each('primary info success warning danger inverse'.split(' '), function(index, type) {
+          new jB.button.SplitMenu({
+              appendTo: '#btn-type'
+              ,text: type
+              ,type: type
+              ,menu: [
+                  {
+                      text: 'Item 1'
+                  },{
+                      text: 'Item 2'
+                  },{
+                      text: 'Item 3'
+                  }
+              ]
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.SplitMenu({
+    appendTo: '#btn'
+    ,text: 'Primary'
+    ,type: 'primary'
+    ,menu: [
+        {
+            text: 'Item 1'
+        },{
+            text: 'Item 2'
+        },{
+            text: 'Item 3'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Button Sizes</h3>
+  <div id="btn-size"></div>
+  <script>
+      $.each('mini small large'.split(' '), function(index, size) {
+          new jB.button.SplitMenu({
+              appendTo: '#btn-size'
+              ,text: size
+              ,size: size
+              ,menu: [
+                  {
+                      text: 'Item 1'
+                  },{
+                      text: 'Item 2'
+                  },{
+                      text: 'Item 3'
+                  }
+              ]
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.SplitMenu({
+    appendTo: '#btn'
+    ,text: 'Large'
+    ,type: 'large'
+    ,menu: [
+        {
+            text: 'Item 1'
+        },{
+            text: 'Item 2'
+        },{
+            text: 'Item 3'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Menu Alignments</h3>
+  <div id="btn-align"></div>
+  <script>
+      new jB.button.SplitMenu({
+          appendTo: '#btn-align'
+          ,text: 'Action'
+          ,dropup: true
+          ,menu: {
+              align: 'right'
+              ,items: [
+                  {
+                      text: 'Item 1'
+                  },{
+                      text: 'Item 2'
+                  },{
+                      text: 'Item 3'
+                  }
+              ]
+          }
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.SplitMenu({
+    appendTo: '#btn'
+    ,text: 'Action'
+    ,dropup: true
+    ,menu: {
+        align: 'right'
+        ,items: [
+            {
+                text: 'Item 1'
+            },{
+                text: 'Item 2'
+            },{
+                text: 'Item 3'
+            }
+        ]
+    }
+})
+</pre>
+</section>

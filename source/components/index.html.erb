@@ -1,0 +1,63 @@
+<div id="member-visibility-handle"></div>
+
+<div id="api" class="public"></div>
+
+<script id="api-tpl" type="text/tpl">
+  <div class="page-header">
+    <h1><%%= name %></h1>
+  </div>
+
+  <p><%%= description %></p>
+  <%% if (examples) { %>
+    <section>
+      <h4>Examples</h4>
+      <%% $.each(examples, function(index, code) { %>
+        <pre class="example">
+          <%%= code %>
+        </pre>
+      <%% }) %>
+    </section>
+  <%% } %>
+
+  <%% var iconMap = {attributes: 'cogs', properties: 'list', methods: 'list-alt', events: 'fire'} %>
+  <%% $.each(members, function(sectionName, items) { %>
+    <section class="member-group">
+      <h4 class="title">
+        <i class="icon-<%%= iconMap[sectionName] %>"></i>
+        <%%= sectionName %>
+      </h4>
+      <hr>
+
+      <ul class="unstyled member-list">
+        <%% $.each(items, function(index, item) { %>
+            <li class="member <%%= item.access %>">
+              <a class="caret" href="#"></a>
+              <a href="#" class="name"><%%= item.name %></a>
+              <%% if (sectionName == 'methods' || sectionName == 'events') { %>
+                (
+                  <%% $.each(item.params, function(index, param) { %>
+                    <%% if (param.optional) { %>
+                      [ <a href="#"><%%= param.type %></a> <%%= param.name %> ]
+                    <%% } else { %>
+                      <a href="#"><%%= param.type %></a> <%%= param.name %>
+                    <%% } %>
+                    <%% if (index < item.params.length - 1) { %>, <%% } %>
+                  <%% }) %>
+                )
+                <%% if (item.return) { %>
+                  : <a href="#" class="type"><%%= item.return.type %></a>
+                <%% } %>
+              <%% } else { %>
+                : <a href="#" class="type"><%%= item.type %></a>
+              <%% } %>
+
+              <div class="description">
+                <%%= item.description %>
+              </div>
+            </li>
+        <%% }) %>
+      </ul>
+
+    </section>
+  <%% }) %>
+</script>

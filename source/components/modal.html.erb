@@ -1,0 +1,202 @@
+---
+title: Modals
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <button class="btn" id="launch-modal">Launch Modal</button>
+  <script>
+    var modal = new jB.Modal({
+        header: 'Modal Heading'
+        ,body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas iaculis, tortor in tincidunt aliquam, diam neque rutrum enim, sed hendrerit tortor turpis eget lectus. Nulla a tortor est. Vivamus augue magna, accumsan eget vulputate non, tincidunt sed odio. Curabitur sapien erat, aliquam et lacinia ut, molestie at neque. Vivamus sed nulla nisl. Cras luctus venenatis leo, eu malesuada mauris mattis vel. Proin ultrices porttitor tortor, ac dapibus libero tincidunt sed.'
+        ,footer: 'Modal Footer'
+        ,backdrop: true
+        ,animation: 'fade'
+    })
+
+    $('#launch-modal').click(function() {
+        modal.show()
+    })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+var modal = new jB.Modal({
+    header: 'Modal Heading'
+    ,body: 'Modal body'
+    ,footer: 'Modal Footer'
+    ,closable: true
+})
+
+$('#launch-modal').click(function() {
+    modal.show()
+})
+</pre>
+</section>
+
+<section>
+  <h3>Backdrop</h3>
+  <button class="btn" id="launch-modal-backdrop">Launch Modal</button>
+  <script>
+      var modal2 = new jB.Modal({
+          header: 'Modal Heading'
+          ,body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas iaculis, tortor in tincidunt aliquam, diam neque rutrum enim, sed hendrerit tortor turpis eget lectus. Nulla a tortor est. Vivamus augue magna, accumsan eget vulputate non, tincidunt sed odio. Curabitur sapien erat, aliquam et lacinia ut, molestie at neque. Vivamus sed nulla nisl. Cras luctus venenatis leo, eu malesuada mauris mattis vel. Proin ultrices porttitor tortor, ac dapibus libero tincidunt sed.'
+          ,footer: 'Modal Footer'
+          ,backdrop: true
+      })
+
+      $('#launch-modal-backdrop').click(function() {
+          modal2.show()
+      })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+var modal = new jB.Modal({
+    header: 'Modal Heading'
+    ,body: 'Modal body'
+    ,footer: 'Modal Footer'
+    ,closable: true
+    ,backdrop: true
+})
+
+$('#launch-modal').click(function() {
+    modal.show()
+})
+</pre>
+</section>
+
+<section>
+  <h3>Animation</h3>
+  <button class="btn" id="launch-modal-animation">Launch Modal</button>
+  <script>
+      var modal3 = new jB.Modal({
+          header: 'Modal Heading'
+          ,body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas iaculis, tortor in tincidunt aliquam, diam neque rutrum enim, sed hendrerit tortor turpis eget lectus. Nulla a tortor est. Vivamus augue magna, accumsan eget vulputate non, tincidunt sed odio. Curabitur sapien erat, aliquam et lacinia ut, molestie at neque. Vivamus sed nulla nisl. Cras luctus venenatis leo, eu malesuada mauris mattis vel. Proin ultrices porttitor tortor, ac dapibus libero tincidunt sed.'
+          ,footer: 'Modal Footer'
+          ,animation: 'fade'
+      })
+
+      $('#launch-modal-animation').click(function() {
+          modal3.show()
+      })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+var modal = new jB.Modal({
+    header: 'Modal Heading'
+    ,body: 'Modal body'
+    ,footer: 'Modal Footer'
+    ,animation: 'fade'
+})
+
+$('#launch-modal').click(function() {
+    modal.show()
+})
+</pre>
+</section>
+
+<section>
+  <h3>Modal With Form Inside</h3>
+  <button class="btn" id="launch-modal-with-form">Launch Modal</button>
+  <script>
+      var modal4 = new jB.Modal({
+          header: 'Login Form'
+          ,width: 350
+          ,closable: false
+          ,body: {
+              xtype: 'container'
+              ,tag: 'form'
+              ,css: {
+                  margin: '10px'
+              }
+              ,items: [
+                  {
+                      tag: 'input'
+                      ,cls: 'input-block-level'
+                      ,attr: {
+                      type: 'text'
+                      ,placeHolder: 'Username'
+                  }
+                  },{
+                      tag: 'input'
+                      ,cls: 'input-block-level'
+                      ,attr: {
+                          type: 'password'
+                          ,placeHolder: 'Password'
+                      }
+                  }
+              ]
+          }
+          ,footer: [
+              {
+                  xtype: 'button'
+                  ,text: 'Login'
+                  ,type: 'primary'
+              },{
+                  xtype: 'button'
+                  ,text: 'Close'
+                  ,click: function() {
+                      modal4.close()
+                      return false
+                  }
+              }
+          ]
+      })
+
+      $('#launch-modal-with-form').click(function() {
+          modal4.show()
+      })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+var modal = new jB.Modal({
+    header: 'Login Form'
+    ,width: 350
+    ,body: {
+        xtype: 'container'
+        ,tag: 'form'
+        ,css: {
+            margin: '10px'
+        }
+        ,items: [
+            {
+                tag: 'input'
+                ,cls: 'input-block-level'
+                ,attr: {
+                type: 'text'
+                ,placeHolder: 'Username'
+            }
+            },{
+                tag: 'input'
+                ,cls: 'input-block-level'
+                ,attr: {
+                    type: 'password'
+                    ,placeHolder: 'Password'
+                }
+            }
+        ]
+    }
+    ,footer: [
+        {
+            xtype: 'button'
+            ,text: 'Login'
+            ,type: 'primary'
+        },{
+            xtype: 'button'
+            ,text: 'Close'
+            ,click: function() {
+                modal.close()
+                return false
+            }
+        }
+    ]
+})
+
+$('#launch-modal').click(function() {
+    modal.show()
+})
+</pre>
+</section>

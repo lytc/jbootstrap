@@ -1,0 +1,248 @@
+---
+title: Popover
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <br>
+  <button class="btn" id="popover">Popover</button>
+  <br>
+  <script>
+      new jB.Popover({
+          target: '#popover'
+          ,title: 'Popover'
+          ,body: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Popover({
+    target: '#popover'
+    ,title: 'Popover'
+    ,body: 'Popover'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Popover Directions</h3>
+  <button class="btn" id="popover-top" style="margin-right: 20px">Popover on top</button>
+  <button class="btn" id="popover-right" style="margin-right: 20px">Popover right</button>
+  <button class="btn" id="popover-bottom" style="margin-right: 20px">Popover bottom</button>
+  <button class="btn" id="popover-left" style="margin-right: 20px">Popover left</button>
+  <script>
+      $.each(['top', 'right', 'bottom', 'left'], function(index, placement) {
+          new jB.Popover({
+              target: '#popover-' + placement
+              ,title: 'Popover on ' + placement
+              ,body: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'
+              ,placement: placement
+          })
+      })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Popover({
+    target: '#popover'
+    ,title: 'Popover'
+    ,body: 'Popover'
+    ,placement: 'right' // top, right, bottom, left
+})
+</pre>
+</section>
+
+<section>
+  <h3>Triggered Events</h3>
+  <button class="btn" id="popover-click" style="margin-right: 20px">Hover me</button>
+  <input type="text" id="popover-focus" placeholder="Focus me">
+  <script>
+      new jB.Popover({
+          target: '#popover-click'
+          ,title: 'Popover'
+          ,body: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'
+          ,triggerType: 'hover' // hover, click, focus
+      })
+
+      new jB.Popover({
+          target: '#popover-focus'
+          ,title: 'Popover'
+          ,body: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'
+          ,triggerType: 'focus'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Popover({
+    target: '#popover-click'
+    ,title: 'Popover'
+    ,body: 'Popover'
+    ,triggerType: 'hover' // hover, click, focus
+})
+
+new jB.Popover({
+    target: '#popover-focus'
+    ,title: 'Popover'
+    ,body: 'Popover'
+    ,triggerType: 'focus'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Popover Types</h3>
+  <button class="btn btn-primary" id="popover-primary">Popover primary</button>
+  <button class="btn btn-info" id="popover-info">Popover info</button>
+  <button class="btn btn-success" id="popover-success">Popover success</button>
+  <button class="btn btn-warning" id="popover-warning">Popover warning</button>
+  <button class="btn btn-danger" id="popover-danger">Popover danger</button>
+  <button class="btn btn-inverse" id="popover-inverse">Popover inverse</button>
+  <script>
+      $.each(['primary', 'info', 'success', 'warning', 'danger', 'inverse'], function(index, type) {
+          new jB.Popover({
+              target: '#popover-' + type
+              ,title: 'Popover ' + type
+              ,body: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'
+              ,type: type
+          })
+      })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Popover({
+    target: '#popover'
+    ,title: 'Popover'
+    ,body: 'Popover'
+    ,type: 'primary' // primary, info, success, warning, error, danger, inverse
+})
+</pre>
+</section>
+
+<section>
+  <h3>Popover Events</h3>
+  <div class="row">
+    <div class="span4">
+      <button class="btn" id="popover-event">Popover event</button>
+    </div>
+    <div class="span5">
+      <div class="well well-small" style="font-size: 10px; max-height: 100px; overflow: auto">
+        <h4>Event Logs</h4>
+        <ul id="popover-event-log" class="inline"></ul>
+      </div>
+    </div>
+  </div>
+  <script>
+      new jB.Popover({
+          target: '#popover-event'
+          ,title: 'Popover'
+          ,body: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.'
+          ,listeners: {
+              show: function() {
+                  $('#popover-event-log').append('<li>show</li>')
+              }
+              ,hide: function() {
+                  $('#popover-event-log').append('<li>hide</li>')
+              }
+              ,toggle: function() {
+                  $('#popover-event-log').append('<li>toggle</li>')
+              }
+          }
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Popover({
+    target: '#popover-event'
+    ,title: 'Popover'
+    ,body: 'Popover event'
+    ,listeners: {
+        show: function() {
+            $('#popover-event-log').append('&lt;li&gt;show&lt;/li&gt;')
+        }
+        ,hide: function() {
+            $('#popover-event-log').append('&lt;li&gt;hide&lt;/li&gt;')
+        }
+        ,toggle: function() {
+            $('#popover-event-log').append('&lt;li&gt;toggle&lt;/li&gt;')
+        }
+    }
+})
+</pre>
+</section>
+
+<section>
+  <h3>Popover with form inside</h3>
+  <button id="popover-with-form" class="btn">Login</button>
+  <script>
+    var popover = new jB.Popover({
+        target: '#popover-with-form'
+        ,title: 'Login Form'
+        ,body: [
+            {
+                tag: 'input'
+                ,cls: 'input-block-level'
+                ,attr: {
+                type: 'text'
+                ,placeHolder: 'Username'
+            }
+            },{
+                tag: 'input'
+                ,cls: 'input-block-level'
+                ,attr: {
+                    type: 'password'
+                    ,placeHolder: 'Password'
+                }
+            },{
+                xtype: 'button'
+                ,text: 'Login'
+                ,css: {
+                    marginRight: 10
+                }
+            },{
+                xtype: 'button'
+                ,text: 'Close'
+                ,click: function() {
+                    popover.hide()
+                    return false
+                }
+            }
+        ]
+    })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+var popover = new jB.Popover({
+    target: '#popover'
+    ,title: 'Login form'
+    ,body: [
+        {
+            tag: 'input'
+            ,cls: 'input-block-level'
+            ,attr: {
+                type: 'text'
+                ,placeHolder: 'Username'
+            }
+        },{
+            tag: 'input'
+            ,cls: 'input-block-level'
+            ,attr: {
+                type: 'password'
+                ,placeHolder: 'Password'
+            }
+        },{
+            xtype: 'button'
+            ,text: 'Login'
+        },{
+            xtype: 'button'
+            ,text: 'Close'
+            ,click: function() {
+                popover.hide()
+                return false
+            }
+        }
+    ]
+})
+</pre>
+</section>

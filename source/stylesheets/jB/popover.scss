@@ -1,0 +1,13 @@
+.popover {
+  @each$color-hash in $colors {
+    $name: nth($color-hash, 1);
+    $color: nth($color-hash, 2);
+
+    &.popover-#{$name} {
+      > .popover-title {
+        background-color: $color;
+        color: white;
+      }
+    }
+  }
+}

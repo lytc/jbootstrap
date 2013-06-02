@@ -1,0 +1,155 @@
+---
+title: Tooltips
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <a href="#" id="tooltip">Tooltip</a>
+  <script>
+      new jB.Tooltip({
+          target: '#tooltip'
+          ,text: 'Tooltip'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tooltip({
+    target: '#tooltip'
+    ,text: 'Tooltip'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Tooltip Directions</h3>
+  <a href="#" id="tooltip-top" style="margin-right: 20px">Tooltip on top</a>
+  <a href="#" id="tooltip-right" style="margin-right: 20px">Tooltip right</a>
+  <a href="#" id="tooltip-bottom" style="margin-right: 20px">Tooltip bottom</a>
+  <a href="#" id="tooltip-left" style="margin-right: 20px">Tooltip left</a>
+  <script>
+      $.each(['top', 'right', 'bottom', 'left'], function(index, placement) {
+          new jB.Tooltip({
+              target: '#tooltip-' + placement
+              ,text: 'Tooltip on ' + placement
+              ,placement: placement
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tooltip({
+    target: '#tooltip'
+    ,text: 'Tooltip'
+    ,placement: 'right' // top, right, bottom, left
+})
+</pre>
+</section>
+
+<section>
+  <h3>Triggered Events</h3>
+  <a href="#" id="tooltip-click" style="margin-right: 20px">Click me</a>
+  <input type="text" id="tooltip-focus" placeholder="Focus me">
+  <script>
+      new jB.Tooltip({
+          target: '#tooltip-click'
+          ,text: 'Tooltip'
+          ,triggerType: 'click' // hover, click, focus
+      })
+
+      new jB.Tooltip({
+          target: '#tooltip-focus'
+          ,text: 'Tooltip'
+          ,triggerType: 'focus'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tooltip({
+    target: '#tooltip-click'
+    ,text: 'Tooltip'
+    ,triggerType: 'click' // hover, click, focus
+})
+
+new jB.Tooltip({
+    target: '#tooltip-focus'
+    ,text: 'Tooltip'
+    ,triggerType: 'focus'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Tooltip Types</h3>
+  <a href="#" id="tooltip-primary" style="margin-right: 20px">Tooltip primary</a>
+  <a href="#" id="tooltip-info" style="margin-right: 20px">Tooltip info</a>
+  <a href="#" id="tooltip-success" style="margin-right: 20px">Tooltip success</a>
+  <a href="#" id="tooltip-warning" style="margin-right: 20px">Tooltip warning</a>
+  <a href="#" id="tooltip-danger" style="margin-right: 20px">Tooltip danger</a>
+  <script>
+      $.each(['primary', 'info', 'success', 'warning', 'danger'], function(index, type) {
+          new jB.Tooltip({
+              target: '#tooltip-' + type
+              ,text: 'Tooltip ' + type
+              ,type: type
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tooltip({
+    target: '#tooltip'
+    ,text: 'Tooltip '
+    ,type: 'primary' // primary, info, success, warning, error, danger, inverse
+})
+</pre>
+</section>
+
+<section>
+  <h3>Tooltip Events</h3>
+  <div class="row">
+    <div class="span4">
+      <a href="#" id="tooltip-event">Tooltip event</a>
+    </div>
+    <div class="span5">
+      <div class="well well-small" style="font-size: 10px; max-height: 100px; overflow: auto">
+        <h4>Event Logs</h4>
+        <ul id="tooltip-event-log" class="inline"></ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    new jB.Tooltip({
+        target: '#tooltip-event'
+        ,text: 'Tooltip event'
+        ,listeners: {
+            show: function() {
+                $('#tooltip-event-log').append('<li>show</li>')
+            }
+            ,hide: function() {
+                $('#tooltip-event-log').append('<li>hide</li>')
+            }
+            ,toggle: function() {
+                $('#tooltip-event-log').append('<li>toggle</li>')
+            }
+        }
+    })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tooltip({
+    target: '#tooltip-event'
+    ,text: 'Tooltip event'
+    ,listeners: {
+        show: function() {
+            $('#tooltip-event-log').append('&lt;li&gt;show&lt;/li&gt;')
+        }
+        ,hide: function() {
+            $('#tooltip-event-log').append('&lt;li&gt;hide&lt;/li&gt;')
+        }
+        ,toggle: function() {
+            $('#tooltip-event-log').append('&lt;li&gt;toggle&lt;/li&gt;')
+        }
+    }
+})
+</pre>
+</section>

@@ -1,0 +1,234 @@
+---
+title: Tabs
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="tab"></div>
+  <script>
+    new jB.Tab({
+        appendTo: '#tab'
+        ,activeItem: 0
+        ,items: [
+            {
+                title: 'Item 1'
+                ,body: '<p>Item 1</p>'
+            },{
+                title: 'Item 2'
+                ,body: '<p>Item 2</p>'
+            }
+        ]
+
+    })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tab({
+    appendTo: '#tab'
+    ,activeItem: 1
+    ,items: [
+        {
+            title: 'Item 1'
+            ,body: '&lt;p&gt;Item 1&lt;/p&gt;'
+        },{
+            title: 'Item 2'
+            ,body: '&lt;p&gt;Item 2&lt;/p&gt;'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Basic pills</h3>
+  <div id="tab-pills"></div>
+  <script>
+      new jB.Tab({
+          appendTo: '#tab-pills'
+          ,activeItem: 1
+          ,pills: true
+          ,items: [
+              {
+                  title: 'Item 1'
+                  ,body: '<p>Item 1</p>'
+              },{
+                  title: 'Item 2'
+                  ,body: '<p>Item 2</p>'
+              }
+          ]
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tab({
+    appendTo: '#tab'
+    ,activeItem: 1
+    ,pills: true
+    ,items: [
+        {
+            title: 'Item 1'
+            ,body: '&lt;p&gt;Item 1&lt;/p&gt;'
+        },{
+            title: 'Item 2'
+            ,body: '&lt;p&gt;Item 2&lt;/p&gt;'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Stacked tabs</h3>
+  <div id="tab-stacked"></div>
+  <script>
+      new jB.Tab({
+          appendTo: '#tab-stacked'
+          ,activeItem: 1
+          ,stacked: true
+          ,items: [
+              {
+                  title: 'Item 1'
+                  ,body: '<p>Item 1</p>'
+              },{
+                  title: 'Item 2'
+                  ,body: '<p>Item 2</p>'
+              }
+          ]
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tab({
+    appendTo: '#tab'
+    ,activeItem: 1
+    ,stacked: true
+    ,items: [
+        {
+            title: 'Item 1'
+            ,body: '&lt;p&gt;Item 1&lt;/p&gt;'
+        },{
+            title: 'Item 2'
+            ,body: '&lt;p&gt;Item 2&lt;/p&gt;'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Stacked tabs</h3>
+  <div id="tab-stacked-pills"></div>
+  <script>
+      new jB.Tab({
+          appendTo: '#tab-stacked-pills'
+          ,stackedPills: true
+          ,items: [
+              {
+                  title: 'Item 1'
+                  ,body: '<p>Item 1</p>'
+              },{
+                  title: 'Item 2'
+                  ,body: '<p>Item 2</p>'
+              }
+          ]
+
+          ,activeItem: 1
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tab({
+    appendTo: '#tab'
+    ,activeItem: 1
+    ,stackedPills: true
+    ,items: [
+        {
+            title: 'Item 1'
+            ,body: '&lt;p&gt;Item 1&lt;/p&gt;'
+        },{
+            title: 'Item 2'
+            ,body: '&lt;p&gt;Item 2&lt;/p&gt;'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Tabs on the bottom</h3>
+  <div id="tab-bottom"></div>
+  <script>
+      new jB.Tab({
+          appendTo: '#tab-bottom'
+          ,activeItem: 0
+          ,direction: 'bottom'
+          ,items: [
+              {
+                  title: 'Item 1'
+                  ,body: '<p>Item 1</p>'
+              },{
+                  title: 'Item 2'
+                  ,body: '<p>Item 2</p>'
+              }
+          ]
+
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tab({
+    appendTo: '#tab-bottom'
+    ,activeItem: 0
+    ,direction: 'bottom'
+    ,items: [
+        {
+            title: 'Item 1'
+            ,body: '&lt;p&gt;Item 1&lt;/p&gt;'
+        },{
+            title: 'Item 2'
+            ,body: '&lt;p&gt;Item 2&lt;/p&gt;'
+        }
+    ]
+
+})
+</pre>
+</section>
+
+<section>
+  <h3>Tabs on the left</h3>
+  <div id="tab-left"></div>
+  <script>
+      new jB.Tab({
+          appendTo: '#tab-left'
+          ,activeItem: 0
+          ,direction: 'left'
+          ,items: [
+              {
+                  title: 'Item 1'
+                  ,body: '<p>Item 1</p>'
+              },{
+                  title: 'Item 2'
+                  ,body: '<p>Item 2</p>'
+              }
+          ]
+
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Tab({
+    appendTo: '#tab-left'
+    ,activeItem: 0
+    ,direction: 'left'
+    ,items: [
+        {
+            title: 'Item 1'
+            ,body: '&lt;p&gt;Item 1&lt;/p&gt;'
+        },{
+            title: 'Item 2'
+            ,body: '&lt;p&gt;Item 2&lt;/p&gt;'
+        }
+    ]
+})
+</pre>
+</section>

@@ -1,0 +1,124 @@
+---
+title: Navbar
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="navbar"></div>
+  <script>
+    new jB.Navbar({
+        appendTo: '#navbar'
+        ,brand: 'Title'
+        ,nav: [
+            {
+                text: 'Item 1'
+                ,menu: [
+                    {
+                        text: 'Item 11'
+                    },{
+                        text: 'Item 12'
+                    }
+                ]
+            },'-',{
+                text: 'Item 2'
+                ,href: 'http://google.com'
+            },{
+                text: 'Item 3'
+            }
+        ]
+    })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Navbar({
+    appendTo: '#navbar'
+    ,brand: 'Title'
+    ,nav: [
+        {
+            text: 'Item 1'
+            ,menu: [
+                {
+                    text: 'Item 11'
+                },{
+                    text: 'Item 12'
+                }
+            ]
+        },'-',{
+            text: 'Item 2'
+        },{
+            text: 'Item 3'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>With Forms</h3>
+  <div id="navbar-form"></div>
+  <script>
+      new jB.Navbar({
+          appendTo: '#navbar-form'
+          ,brand: 'Title'
+          ,items: [
+              {
+                  xtype: 'navbar.nav'
+                  ,items: [
+                      {
+                          text: 'Item 1'
+                      },{
+                          text: 'Item 2'
+                      }
+                  ]
+              },{
+                  xtype: 'container'
+                  ,tag: 'form'
+                  ,cls: 'navbar-search pull-right'
+                  ,items: [
+                      {
+                          tag: 'input'
+                          ,cls: 'search-query'
+                          ,attr: {
+                              type: 'text'
+                              ,placeHolder: 'Search'
+                          }
+                      }
+                  ]
+              }
+          ]
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Navbar({
+    appendTo: '#navbar'
+    ,brand: 'Title'
+    ,items: [
+        {
+            xtype: 'navbar.nav'
+            ,items: [
+                {
+                    text: 'Item 1'
+                },{
+                    text: 'Item 2'
+                }
+            ]
+        },{
+            xtype: 'container'
+            ,tag: 'form'
+            ,cls: 'navbar-search pull-right'
+            ,items: [
+                {
+                    tag: 'input'
+                    ,cls: 'search-query'
+                    ,attr: {
+                        type: 'text'
+                        ,placeHolder: 'Search'
+                    }
+                }
+            ]
+        }
+    ]
+})
+</pre>
+</section>

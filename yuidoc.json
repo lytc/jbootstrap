@@ -1,0 +1,11 @@
+{
+    "name": "jBootstrap",
+    "description": "The javascript version of Twitter Bootstrap",
+    "version": "1.0",
+    "options": {
+        "paths": [
+            "./source/javascripts/jB"
+        ],
+        "outdir": "./source/data/api"
+    }
+}

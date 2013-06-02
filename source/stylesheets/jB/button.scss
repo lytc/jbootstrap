@@ -1,0 +1,9 @@
+.btn {
+  > [class*="icon-"] + .x-text {
+    margin-left: 4px;
+  }
+
+  > .x-text:not(:empty) + .caret {
+    margin-left: 4px;
+  }
+}

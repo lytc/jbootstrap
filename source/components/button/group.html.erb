@@ -1,0 +1,226 @@
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="btn-group"></div>
+  <script>
+    new jB.button.Group({
+        renderTo: '#btn-group'
+        ,items: [
+            {
+                text: 'Btn 1'
+            },{
+                text: 'Btn 2'
+            },{
+                text: 'Btn 3'
+            }
+        ]
+    })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.Group({
+    renderTo: '#btn-group'
+    ,items: [
+        {
+            text: 'Btn 1'
+        },{
+            text: 'Btn 2'
+        },{
+            text: 'Btn 3'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Vertical Button Groups</h3>
+  <div id="btn-group-vertical"></div>
+  <script>
+      new jB.button.Group({
+          renderTo: '#btn-group-vertical'
+          ,vertical: true
+          ,items: [
+              {
+                  text: 'Btn 1'
+              },{
+                  text: 'Btn 2'
+              },{
+                  text: 'Btn 3'
+              }
+          ]
+      })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.Group({
+    renderTo: '#btn-group'
+    ,items: [
+        {
+            text: 'Btn 1'
+        },{
+            text: 'Btn 2'
+        },{
+            text: 'Btn 3'
+        }
+    ]
+})
+</pre>
+</section>
+
+
+<section>
+  <h3>Button Types</h3>
+  <div id="btn-group-type"></div>
+  <script>
+      $.each(['primary', 'info', 'success', 'warning', 'danger', 'inverse'], function(index, type) {
+          new jB.button.Group({
+              appendTo: '#btn-group-type'
+              ,css: {
+                  marginBottom: 10
+              }
+              ,defaults: {
+                  type: type
+              }
+              ,items: [
+                  {
+                      text: type
+                  },{
+                      text: type
+                  },{
+                      text: type
+                  }
+              ]
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.Group({
+    appendTo: '#btn-group'
+    ,defaults: {
+        type: 'primary' // primary, info, success, warning, danger, inverse
+    }
+    ,items: [
+        {
+            text: 'primary'
+        },{
+            text: 'primary'
+        },{
+            text: 'primary'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Button Sizes</h3>
+  <div id="btn-group-size"></div>
+  <script>
+      $.each(['mini', 'small', 'large'], function(index, size) {
+          new jB.button.Group({
+              appendTo: '#btn-group-size'
+              ,css: {
+                  marginBottom: 10
+              }
+              ,defaults: {
+                  size: size
+              }
+              ,items: [
+                  {
+                      text: size
+                  },{
+                      text: size
+                  },{
+                      text: size
+                  }
+              ]
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.Group({
+    appendTo: '#btn-group-type'
+    ,defaults: {
+        size: 'small'
+    }
+    ,items: [
+        {
+            text: 'small'
+        },{
+            text: 'small'
+        },{
+            text: 'small'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Toggleable Buttons</h3>
+  <div id="btn-group-togglable"></div>
+  <script>
+      new jB.button.Group({
+          appendTo: '#btn-group-togglable'
+          ,togglable: 'checkbox'
+          ,items: [
+              {
+                  text: 'Checkbox'
+              },{
+                  text: 'Checkbox'
+              },{
+                  text: 'Checkbox'
+              }
+          ]
+      })
+
+      btngroup = new jB.button.Group({
+          appendTo: '#btn-group-togglable'
+          ,togglable: 'radio'
+          ,items: [
+              {
+                  text: 'Radio'
+              },{
+                  text: 'Radio'
+              },{
+                  text: 'Radio'
+              }
+          ]
+      })
+  </script>
+  <br>
+  <br>
+<pre class="prettyprint linenums">
+new jB.button.Group({
+    appendTo: '#btn-group-togglable'
+    ,togglable: 'checkbox'
+    ,items: [
+        {
+            text: 'Checkbox'
+        },{
+            text: 'Checkbox'
+        },{
+            text: 'Checkbox'
+        }
+    ]
+})
+
+new jB.button.Group({
+    appendTo: '#btn-group-togglable'
+    ,togglable: 'radio'
+    ,items: [
+        {
+            text: 'Radio'
+        },{
+            text: 'Radio'
+        },{
+            text: 'Radio'
+        }
+    ]
+})
+</pre>
+</section>

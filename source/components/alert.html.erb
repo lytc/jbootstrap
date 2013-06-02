@@ -1,0 +1,110 @@
+---
+title: Alert
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="alert"></div>
+  <script>
+    new jB.Alert({
+        renderTo: '#alert'
+        ,html: '<b>Holy guacamole!</b> Best check yo self, you\'re not looking too good.'
+    })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Alert({
+    renderTo: '#alert'
+    ,html: '&lt;b&gt;Holy guacamole!&lt;/b&gt; Best check yo self, you\'re not looking too good.'
+})
+</pre>
+</section>
+
+<section>
+  <h3>With Title</h3>
+  <div id="alert-title"></div>
+  <script>
+      new jB.Alert({
+          renderTo: '#alert-title'
+          ,closable: true
+          ,title: 'Warning!'
+          ,html: 'Best check yo self, you\'re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Alert({
+    renderTo: '#alert'
+    ,closable: true
+    ,title: 'Warning!'
+    ,html: '&lt;b&gt;Holy guacamole!&lt;/b&gt; Best check yo self, you\'re not looking too good.'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Closable</h3>
+  <div id="alert-closable"></div>
+  <script>
+      new jB.Alert({
+          renderTo: '#alert-closable'
+          ,closable: true
+          ,html: '<b>Holy guacamole!</b> Best check yo self, you\'re not looking too good.'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Alert({
+    renderTo: '#alert'
+    ,closable: true
+    ,html: '&lt;b&gt;Holy guacamole!&lt;/b&gt; Best check yo self, you\'re not looking too good.'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Alert Types</h3>
+  <div id="alert-type"></div>
+  <script>
+      $.each(['info', 'success', 'error'], function(index, type) {
+        new jB.Alert({
+            appendTo: '#alert-type'
+            ,type: type
+            ,html: '<b style="text-transform: capitalize">' + type + '!</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum condimentum neque quis aliquet.'
+        })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Alert({
+    renderTo: '#alert'
+    ,type: 'success'
+    ,title: 'Success!'
+    ,html: '&lt;b&gt;Holy guacamole!&lt;/b&gt; Best check yo self, you\'re not looking too good.'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Alert Block</h3>
+  <div id="alert-block"></div>
+  <script>
+      new jB.Alert({
+          renderTo: '#alert-block'
+          ,closable: true
+          ,block: true
+          ,title: 'Warning!'
+          ,html: 'Best check yo self, you\'re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Alert({
+    renderTo: '#alert'
+    ,closable: true
+    ,block: true
+    ,title: 'Warning!'
+    ,html: '&lt;b&gt;Holy guacamole!&lt;/b&gt; Best check yo self, you\'re not looking too good.'
+})
+</pre>
+</section>

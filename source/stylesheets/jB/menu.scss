@@ -1,0 +1,12 @@
+.dropdown-menu {
+  > li {
+    position: relative;
+    > a {
+      padding-left: 28px;
+      > input[type=checkbox] {
+        position: absolute;
+        left: 8px;
+      }
+    }
+  }
+}

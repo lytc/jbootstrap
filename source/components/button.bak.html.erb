@@ -1,0 +1,163 @@
+---
+title: Buttons
+---
+
+<!-- The Basic Instance -->
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="btn1"></div>
+  <script>
+      btn = new jB.Button({
+          appendTo: '#btn1'
+          ,icon: 'glass'
+          ,text: 'Button'
+          ,click: function() {
+              alert('Hi!')
+          }
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Button({
+    appendTo: '#btn'
+    ,icon: 'glass'
+    ,text: 'Button'
+    ,click: function() {
+        alert('Hi!')
+    }
+})
+</pre>
+</section>
+
+<!-- Button Types -->
+<section>
+  <h3>Button Types</h3>
+  <div id="btn-type"></div>
+  <script>
+      var types = ['primary', 'info', 'success', 'warning', 'danger', 'inverse']
+      $.each(types, function(index, type) {
+          new jB.Button({
+              appendTo: '#btn-type'
+              ,text: type
+              ,type: type
+              ,css: {
+                  marginRight: '4px'
+              }
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Button({
+    appendTo: '#btn'
+    ,text: 'Button'
+    ,style: 'primary'
+})
+</pre>
+</section>
+
+<!-- Button Sizes -->
+<section>
+  <h3>Button Sizes</h3>
+  <div id="btn-size"></div>
+  <script>
+      var sizes = ['mini', 'small', 'large']
+      $.each(sizes, function(index, size) {
+          new jB.Button({
+              appendTo: '#btn-size'
+              ,text: size
+              ,size: size
+              ,css: {
+                  marginRight: '4px'
+              }
+          })
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Button({
+    appendTo: '#btn'
+    ,text: size
+    ,size: 'Large'
+})
+</pre>
+</section>
+
+<!-- Block Level Buttons -->
+<section>
+  <h3>Block Level Buttons</h3>
+  <div id="btn-block"></div>
+  <script>
+      new jB.Button({
+          appendTo: '#btn-block'
+          ,text: 'Block level button'
+          ,block: true
+          ,size: 'large'
+          ,type: 'primary'
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Button({
+    appendTo: '#btn'
+    ,text: 'Button block level'
+    ,block: true
+})
+</pre>
+</section>
+
+
+<!-- Button states -->
+<section>
+  <h3>Button states</h3>
+  <div id="btn-state"></div>
+  <script>
+      new jB.Button({
+          appendTo: '#btn-state'
+          ,text: 'Disabled'
+          ,disabled: true
+          ,css: {
+              marginRight: 10
+          }
+      })
+      new jB.Button({
+          appendTo: '#btn-state'
+          ,text: 'Pressed'
+          ,pressed: true
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Button({
+    appendTo: '#btn'
+    ,text: 'Disabled'
+    ,disabled: true
+})
+new jB.Button({
+    appendTo: '#btn'
+    ,text: 'Pressed'
+    ,pressed: true
+})
+</pre>
+</section>
+
+<!-- Togglable buttons -->
+<section>
+  <h3>Togglable button</h3>
+  <div id="btn-togglable"></div>
+  <script>
+      new jB.Button({
+          appendTo: '#btn-togglable'
+          ,text: 'Togglable'
+          ,togglable: true
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Button({
+    appendTo: '#btn'
+    ,text: 'Disabled'
+    ,disabled: true
+})
+</pre>
+</section>

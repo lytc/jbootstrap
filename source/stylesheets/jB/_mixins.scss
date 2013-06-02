@@ -1,0 +1,89 @@
+@mixin vendor-prefix($property, $value...) {
+  #{$property}: $value;
+  -moz-#{$property}: $value;
+  -webkit-#{$property}: $value;
+  -o-#{$property}: $value;
+  -ms-#{$property}: $value;
+}
+
+@mixin vendor-suffix($property, $value...) {
+  #{$property}: $value;
+  #{$property}: -moz-#{$value};
+  #{$property}: -webkit-#{$value};
+  #{$property}: -o-#{$value};
+  #{$property}: -ms-#{$value};
+}
+
+@mixin vendor-prefix-suffix($property, $value...) {
+  #{$property}: $value;
+  -moz-#{$property}: -moz-#{$value};;
+  -webkit-#{$property}: -webkit-#{$value};;
+  -o-#{$property}: -o-#{$value};;
+  -ms-#{$property}: -ms-#{$value};;
+}
+
+@mixin linear-gradient($args...) {
+  @include vendor-suffix(background-image, linear-gradient($args...));
+}
+
+@mixin box-sizing($value) {
+  box-sizing: $value;
+  -moz-box-sizing: $value;
+  -webkit-box-sizing: $value;
+  -o-box-sizing: $value;
+  -ms-box-sizing: $value;
+}
+
+@mixin calc($property, $value) {
+  @include vendor-suffix($property, calc(#{$value}));
+}
+
+@mixin transition($value...) {
+  transition: $value;
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  -ms-transition: $value;
+}
+
+@mixin animation($value) {
+  animation: $value;
+  -moz-animation: $value;
+  -webkit-animation: $value;
+  -o-animation: $value;
+  -ms-animation: $value;
+}
+
+@mixin transform($value) {
+  @include vendor-prefix(transform, $value);
+}
+
+@mixin keyframes($name) {
+  @keyframes $name {
+    @content;
+  }
+  @-moz-keyframes $name {
+    @content;
+  }
+  @-webkit-keyframes $name {
+    @content;
+  }
+  @-o-keyframes $name {
+    @content;
+  }
+  @-ms-keyframes $name {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}

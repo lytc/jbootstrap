@@ -1,0 +1,290 @@
+---
+title: Menu
+---
+
+<section>
+  <h3>The Basic Instance</h3>
+  <div id="menu" class="clearfix"></div>
+  <script>
+    new jB.Menu({
+        appendTo: '#menu'
+        ,css: {
+            display: 'block'
+            ,position: 'static'
+        }
+        ,items: [
+            {
+                text: 'Action'
+                ,href: '#'
+            },{
+                text: 'Another action'
+                ,href: '#'
+            },{
+                text: 'Disabled link'
+                ,href: '#'
+                ,disabled: true
+            },'-',{
+                text: 'Separated link'
+                ,href: '#'
+            }
+        ]
+    })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Menu({
+    appendTo: '#menu'
+    ,css: {
+        display: 'block'
+        ,position: 'static'
+    }
+    ,items: [
+        {
+            text: 'Action'
+            ,href: '#'
+        },{
+            text: 'Another action'
+            ,href: '#'
+        },{
+            text: 'Disabled link'
+            ,href: '#'
+            ,disabled: true
+        },'-',{
+            text: 'Separated link'
+            ,href: '#'
+        }
+    ]
+})
+</pre>
+</section>
+
+<section>
+  <h3>Sub menus</h3>
+  <div class="clearfix">
+    <div class="pull-left" style="margin-right: 20px">
+      <p class="muted">Default</p>
+      <div id="menu-sub-default" class="clearfix"></div>
+    </div>
+    <div class="pull-left" style="margin-right: 20px">
+      <p class="muted">Dropup</p>
+      <div id="menu-sub-dropup" class="clearfix"></div>
+    </div>
+    <div class="pull-left" style="margin-right: 20px">
+      <p class="muted">Left submenu</p>
+      <div id="menu-sub-left" class="clearfix"></div>
+    </div>
+  </div>
+  <script>
+      new jB.Menu({
+          appendTo: '#menu-sub-default'
+          ,css: {
+              display: 'block'
+              ,position: 'static'
+          }
+          ,items: [
+              {
+                  text: 'Action'
+                  ,href: '#'
+              },{
+                  text: 'Another action'
+                  ,href: '#'
+              },{
+                  text: 'Something else here'
+                  ,href: '#'
+              },'-',{
+                  text: 'More options'
+                  ,href: '#'
+                  ,menu: [
+                      {
+                          text: 'Second level link'
+                          ,href: '#'
+                      },{
+                          text: 'Second level link'
+                          ,href: '#'
+                      },{
+                          text: 'Second level link'
+                          ,href: '#'
+                      }
+                  ]
+              }
+          ]
+      })
+      new jB.Menu({
+          appendTo: '#menu-sub-dropup'
+          ,dropUp: true
+          ,css: {
+              display: 'block'
+              ,position: 'static'
+          }
+          ,items: [
+              {
+                  text: 'Action'
+                  ,href: '#'
+              },{
+                  text: 'Another action'
+                  ,href: '#'
+              },{
+                  text: 'Something else here'
+                  ,href: '#'
+              },'-',{
+                  text: 'More options'
+                  ,href: '#'
+                  ,menu: [
+                      {
+                          text: 'Second level link'
+                          ,href: '#'
+                      },{
+                          text: 'Second level link'
+                          ,href: '#'
+                      },{
+                          text: 'Second level link'
+                          ,href: '#'
+                      }
+                  ]
+              }
+          ]
+      })
+      new jB.Menu({
+          appendTo: '#menu-sub-left'
+          ,css: {
+              display: 'block'
+              ,position: 'static'
+          }
+          ,items: [
+              {
+                  text: 'Action'
+                  ,href: '#'
+              },{
+                  text: 'Another action'
+                  ,href: '#'
+              },{
+                  text: 'Something else here'
+                  ,href: '#'
+              },'-',{
+                  text: 'More options'
+                  ,href: '#'
+                  ,menuAlign: 'left'
+                  ,menu: [
+                      {
+                          text: 'Second level link'
+                          ,href: '#'
+                      },{
+                          text: 'Second level link'
+                          ,href: '#'
+                      },{
+                          text: 'Second level link'
+                          ,href: '#'
+                      }
+                  ]
+              }
+          ]
+      })
+  </script>
+  <br>
+<pre class="prettyprint linenums">
+new jB.Menu({
+  appendTo: '#menu-sub-default'
+  ,css: {
+      display: 'block'
+      ,position: 'static'
+  }
+  ,items: [
+      {
+          text: 'Action'
+          ,href: '#'
+      },{
+          text: 'Another action'
+          ,href: '#'
+      },{
+          text: 'Something else here'
+          ,href: '#'
+      },'-',{
+          text: 'More options'
+          ,href: '#'
+          ,menu: [
+              {
+                  text: 'Second level link'
+                  ,href: '#'
+              },{
+                  text: 'Second level link'
+                  ,href: '#'
+              },{
+                  text: 'Second level link'
+                  ,href: '#'
+              }
+          ]
+      }
+  ]
+})
+new jB.Menu({
+  appendTo: '#menu-sub-dropup'
+  ,dropUp: true
+  ,css: {
+      display: 'block'
+      ,position: 'static'
+  }
+  ,items: [
+      {
+          text: 'Action'
+          ,href: '#'
+      },{
+          text: 'Another action'
+          ,href: '#'
+      },{
+          text: 'Something else here'
+          ,href: '#'
+      },'-',{
+          text: 'More options'
+          ,href: '#'
+          ,menu: [
+              {
+                  text: 'Second level link'
+                  ,href: '#'
+              },{
+                  text: 'Second level link'
+                  ,href: '#'
+              },{
+                  text: 'Second level link'
+                  ,href: '#'
+              }
+          ]
+      }
+  ]
+})
+new jB.Menu({
+  appendTo: '#menu-sub-left'
+  ,css: {
+      display: 'block'
+      ,position: 'static'
+  }
+  ,items: [
+      {
+          text: 'Action'
+          ,href: '#'
+      },{
+          text: 'Another action'
+          ,href: '#'
+      },{
+          text: 'Something else here'
+          ,href: '#'
+      },'-',{
+          text: 'More options'
+          ,href: '#'
+          ,menuAlign: 'left'
+          ,menu: [
+              {
+                  text: 'Second level link'
+                  ,href: '#'
+              },{
+                  text: 'Second level link'
+                  ,href: '#'
+              },{
+                  text: 'Second level link'
+                  ,href: '#'
+              }
+          ]
+      }
+  ]
+})
+</pre>
+</section>

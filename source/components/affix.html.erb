@@ -1,0 +1,97 @@
+---
+title: Affix
+---
+
+<section>
+<h3>The Basic Instance</h3>
+<div id="alert-affix"></div>
+<div id="handle"></div>
+<script>
+    var alert = new jB.Alert({
+        appendTo: '#alert-affix'
+        ,closable: true
+        ,html: '<b>Affix! </b> Best check yo self, you\'re not looking too good.'
+        ,css: {
+            marginBottom: 0
+        }
+    })
+
+    $.each(['top', 'right', 'bottom', 'left', 'top left', 'top center', 'top right', 'center left', 'center center', 'center right', 'bottom left', 'bottom center', 'bottom right'], function(index, pos) {
+        new jB.Button({
+            appendTo: '#handle'
+            ,text: pos
+            ,css: {
+                margin: '0 10px 10px 0'
+            }
+            ,click: function() {
+                alert.show().affix = pos
+            }
+        })
+    })
+</script>
+<br>
+<pre class="prettyprint linenums">
+new jB.Alert({
+    renderTo: '#alert'
+    ,closable: true
+    ,html: '&lt;b&gt;Holy guacamole!&lt;/b&gt; Best check yo self, you\'re not looking too good.'
+})
+</pre>
+</section>
+
+<section>
+  <h3>Scroll</h3>
+  <div id="affix-scroll"></div>
+  <script>
+
+  </script>
+</section>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
+<p>a</p>
